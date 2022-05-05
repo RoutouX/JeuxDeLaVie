@@ -19,32 +19,14 @@ import java.util.concurrent.TimeUnit;
 public class Main
 {
     public static void main(String[] args) throws InterruptedException {
-        Map m = new Map(10, 10);
-        while (true) {
-            m.print_map();
-            m.map_update();
-            TimeUnit.SECONDS.sleep(4);
+        RunGame runGame = new RunGame();
+        Map m = runGame.getMap();
+        MoteurGraphique moteurGraphique = new MoteurGraphique(m);
 
-        }
+        Thread threadGame = new Thread(runGame);
+        Thread threadAff = new Thread(moteurGraphique);
 
-        //celule celule0 = new celule(true, 0, 0);
-        //SwingUtilities.invokeLater(new Runnable()
-        //{
-            //public void run()
-            //{
-                //createAndShowGUI();
-            //}
-        //});
-    }
-
-
-    private static void createAndShowGUI(){
-        System.out.println("Created GUI on EDT? "+SwingUtilities.isEventDispatchThread());
-        JFrame f = new JFrame("Swing Paint Demo");
-        f.setPreferredSize(new Dimension(400,200));
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(new JPanel());
-        f.pack();
-        f.setVisible(true);
+        threadGame.start();
+        threadAff.start();
     }
 }

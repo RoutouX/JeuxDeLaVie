@@ -10,7 +10,7 @@ public class Map {
         Random rd = new Random();
         tableau_celul = new Celule[size_x][size_y];
         for (int x=0; x<size_x;x++) {
-            for (int y=0; y<size_x;y++) {
+            for (int y=0; y<size_y;y++) {
                 tableau_celul[x][y] = new Celule(rd.nextBoolean(), x, y);
             }
         }
@@ -33,12 +33,12 @@ public class Map {
 
     public void map_update(){
         for (int x=0; x<this.size_x;x++) {
-            for (int y=0; y<this.size_x;y++) {
+            for (int y=0; y<this.size_y;y++) {
                 tableau_celul[x][y].pre_update(this);
             }
         }
         for (int x=0; x<this.size_x;x++) {
-            for (int y=0; y<this.size_x;y++) {
+            for (int y=0; y<this.size_y;y++) {
                 tableau_celul[x][y].update();
             }
         }
@@ -49,7 +49,7 @@ public class Map {
         boolean etat_celule;
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\\n\n\n\n\n\n\n\n\n\n");
         for (int x=0; x<this.size_x;x++) {
-            for (int y=0; y<this.size_x;y++) {
+            for (int y=0; y<this.size_y;y++) {
                 etat_celule = tableau_celul[x][y].get_etat();
                 if (etat_celule == true){
                     ligne = ligne + "[X]";
@@ -60,7 +60,13 @@ public class Map {
             System.out.println(ligne + "\n");
             ligne = "";
         }
+    }
 
+    public int getSize_x(){
+        return this.size_x;
+    }
 
+    public int getSize_y(){
+        return this.size_y;
     }
 }
