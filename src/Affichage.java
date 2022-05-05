@@ -39,11 +39,6 @@ public class Affichage extends JPanel {
         int i = 0;
         for (int x=0; x<m.getSize_x();x++) {
             for (int y=0; y<m.getSize_y();y++) {
-                //System.out.println(x*squareEveryX);
-                //System.out.println(y*squareEveryY);
-                //System.out.println(squareEveryX);
-                //System.out.println(squareEveryY);
-                //System.out.println(m.get_celule_by_co(x, y).get_etat());
                 cc[i] = new CareCelule((int) (x*squareEveryX), (int) (y*squareEveryY), (int) squareEveryX, (int) squareEveryY,m.get_celule_by_co(x, y).get_etat());
                 i++;
             }
@@ -52,7 +47,6 @@ public class Affichage extends JPanel {
         cc[0].paintcelule(g);
         for(CareCelule c : cc) {
             c.paintcelule(g);
-            System.out.println("Paint");
         }
     }
 

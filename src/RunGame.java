@@ -5,12 +5,12 @@ public class RunGame extends Thread {
 
 
     public RunGame() {
-        this.m = new Map(19, 10);
+        this.m = new Map(192, 108);
     }
 
     public void run() {
         while (true) {
-            this.m.print_map();
+            //this.m.print_map();
             this.m.map_update();
             try {
                 TimeUnit.SECONDS.sleep(1);

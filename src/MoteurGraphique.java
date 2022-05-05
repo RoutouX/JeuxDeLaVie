@@ -33,7 +33,7 @@ public class MoteurGraphique extends JFrame {
             this.add(new Affichage(this.m, this));
             this.setVisible(true);
             try {
-                TimeUnit.MILLISECONDS.sleep(16);
+                TimeUnit.MILLISECONDS.sleep(200);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
