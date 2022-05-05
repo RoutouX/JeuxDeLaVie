@@ -24,9 +24,8 @@ public class Main
         MoteurGraphique moteurGraphique = new MoteurGraphique(m);
 
         Thread threadGame = new Thread(runGame);
-        Thread threadAff = new Thread(moteurGraphique);
 
         threadGame.start();
-        threadAff.start();
+        moteurGraphique.run();
     }
 }

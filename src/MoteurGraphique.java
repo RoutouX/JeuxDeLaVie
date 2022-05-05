@@ -17,24 +17,27 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 
-public class MoteurGraphique extends Thread {
-    private JFrame f = new JFrame("Jeux de la vie");
-    private Dimension frameSize;
+public class MoteurGraphique extends JFrame {
 
     Map m;
 
     public MoteurGraphique(Map m) {
         this.m = m;
-        frameSize = f.getSize();
-        System.out.println(frameSize);
+        this.setSize(1920, 1080);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 
     public void run() {
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setSize(1920, 1080);
-        f.add(new Affichage(this.m, this.frameSize));
-        f.setVisible(true);
+        while (true) {
+            this.add(new Affichage(this.m, this));
+            this.setVisible(true);
+            try {
+                TimeUnit.MILLISECONDS.sleep(16);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
 }

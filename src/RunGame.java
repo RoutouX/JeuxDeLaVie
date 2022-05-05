@@ -4,7 +4,7 @@ public class RunGame extends Thread {
     private Map m;
 
 
-    public RunGame(){
+    public RunGame() {
         this.m = new Map(19, 10);
     }
 
@@ -13,7 +13,7 @@ public class RunGame extends Thread {
             this.m.print_map();
             this.m.map_update();
             try {
-                TimeUnit.SECONDS.sleep(4);
+                TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

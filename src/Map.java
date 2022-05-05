@@ -47,9 +47,12 @@ public class Map {
     public void print_map(){
         String ligne = "";
         boolean etat_celule;
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\\n\n\n\n\n\n\n\n\n\n");
-        for (int x=0; x<this.size_x;x++) {
-            for (int y=0; y<this.size_y;y++) {
+        System.out.println("----------------------------------");
+        System.out.println("Size X = " + this.size_x);
+        System.out.println("Size Y = " + this.size_y);
+        System.out.println("----------------------------------");
+        for (int y=0; y<this.size_y;y++) {
+            for (int x=0; x<this.size_x;x++) {
                 etat_celule = tableau_celul[x][y].get_etat();
                 if (etat_celule == true){
                     ligne = ligne + "[X]";
