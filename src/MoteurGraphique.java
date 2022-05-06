@@ -19,7 +19,8 @@ import java.util.concurrent.TimeUnit;
 
 public class MoteurGraphique extends JFrame {
 
-    Map m;
+    private Map m;
+
 
     public MoteurGraphique(Map m) {
         this.m = m;
@@ -32,10 +33,13 @@ public class MoteurGraphique extends JFrame {
         while (true) {
             this.add(new Affichage(this.m, this));
             this.setVisible(true);
-            try {
-                TimeUnit.MILLISECONDS.sleep(200);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+            m.setMap_updated(false);
+            while (m.getMap_updated() == false) {
+                try {
+                    TimeUnit.MILLISECONDS.sleep(10);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
     }

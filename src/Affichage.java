@@ -7,21 +7,13 @@ public class Affichage extends JPanel {
     Map m;
     MoteurGraphique mg;
 
-    CareCelule[][] tblCareeClule;
+    CareCelule[] tableauCareCelule;
     public Affichage(Map m, MoteurGraphique mg){
         this.m = m;
         this.mg = mg;
 
     }
 
-    public void squaretbl(){
-        tblCareeClule = new CareCelule[m.getSize_x()][m.getSize_y()];
-        for (int x=0; x<m.getSize_x();x++) {
-            for (int y=0; y<m.getSize_y();y++) {
-                tblCareeClule[x][y] = new CareCelule(0, 0, 0, 0, false);
-            }
-        }
-    }
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -34,18 +26,16 @@ public class Affichage extends JPanel {
         int squareEveryX = (int) (fenetre_size_x / size_x);
         int squareEveryY = (int) (fenetre_size_y / size_y);
 
-        CareCelule[] cc = new CareCelule[m.getSize_x()*m.getSize_y()];
+        this.tableauCareCelule = new CareCelule[m.getSize_x()*m.getSize_y()];
 
         int i = 0;
         for (int x=0; x<m.getSize_x();x++) {
             for (int y=0; y<m.getSize_y();y++) {
-                cc[i] = new CareCelule((int) (x*squareEveryX), (int) (y*squareEveryY), (int) squareEveryX, (int) squareEveryY,m.get_celule_by_co(x, y).get_etat());
+                tableauCareCelule[i] = new CareCelule((int) (x*squareEveryX), (int) (y*squareEveryY), (int) squareEveryX, (int) squareEveryY,m.get_celule_by_co(x, y).get_etat());
                 i++;
             }
         }
-        cc[0] = new CareCelule(-200, -200, 2000 ,2000 , true);
-        cc[0].paintcelule(g);
-        for(CareCelule c : cc) {
+        for(CareCelule c : tableauCareCelule) {
             c.paintcelule(g);
         }
     }

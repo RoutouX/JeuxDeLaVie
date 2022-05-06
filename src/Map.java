@@ -3,10 +3,13 @@ import java.util.Random;
 public class Map {
     int size_x;
     int size_y;
-    Celule[][] tableau_celul;
+    private Celule[][] tableau_celul;
+
+    private boolean map_updated;
 
     public Map(int size_x, int size_y)
     {
+        this.map_updated = false;
         Random rd = new Random();
         tableau_celul = new Celule[size_x][size_y];
         for (int x=0; x<size_x;x++) {
@@ -71,5 +74,13 @@ public class Map {
 
     public int getSize_y(){
         return this.size_y;
+    }
+
+    public boolean getMap_updated(){
+        return this.map_updated;
+    }
+
+    public void setMap_updated(boolean b){
+        this.map_updated = b;
     }
 }

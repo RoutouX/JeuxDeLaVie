@@ -12,8 +12,9 @@ public class RunGame extends Thread {
         while (true) {
             //this.m.print_map();
             this.m.map_update();
+            m.setMap_updated(true);
             try {
-                TimeUnit.SECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(333);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -23,4 +24,5 @@ public class RunGame extends Thread {
     public Map getMap() {
         return this.m;
     }
+
 }
