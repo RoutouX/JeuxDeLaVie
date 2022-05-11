@@ -30,9 +30,9 @@ public class MoteurGraphique extends JFrame {
 
 
     public void run() {
-            this.frame = new Affichage(this.m, this);
-            this.add(this.frame);
-            this.setVisible(true);
+        this.frame = new Affichage(this.m, this);
+        this.add(this.frame);
+        this.setVisible(true);
     }
 
 }

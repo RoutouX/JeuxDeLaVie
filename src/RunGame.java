@@ -18,15 +18,9 @@ public class RunGame extends Thread {
             this.m.map_update();
             tempsFin = System.currentTimeMillis();
             this.m.map_preupdate();
-            while ((tempsFin - tempsDebut)<333) {
-                try {
-                    TimeUnit.MILLISECONDS.sleep(10);
-                    tempsFin = System.currentTimeMillis();
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
             moteurgraphique.repaint();
+                try {TimeUnit.MILLISECONDS.sleep(333-(tempsFin - tempsDebut));tempsFin = System.currentTimeMillis();} catch (InterruptedException e) {throw new RuntimeException(e);}
+            System.out.println("Teamps = "+(tempsFin - tempsDebut));
         }
     }
 
