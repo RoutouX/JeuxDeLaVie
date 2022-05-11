@@ -37,12 +37,15 @@ public class Map {
     public void map_update(){
         for (int x=0; x<this.size_x;x++) {
             for (int y=0; y<this.size_y;y++) {
-                tableau_celul[x][y].pre_update(this);
+                tableau_celul[x][y].update();
             }
         }
+    }
+
+    public void map_preupdate(){
         for (int x=0; x<this.size_x;x++) {
             for (int y=0; y<this.size_y;y++) {
-                tableau_celul[x][y].update();
+                tableau_celul[x][y].pre_update(this);
             }
         }
     }

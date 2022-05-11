@@ -22,6 +22,7 @@ public class Main
         RunGame runGame = new RunGame();
         Map m = runGame.getMap();
         MoteurGraphique moteurGraphique = new MoteurGraphique(m);
+        runGame.setMoteurGraphique(moteurGraphique);
 
         Thread threadGame = new Thread(runGame);
 

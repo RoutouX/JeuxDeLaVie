@@ -30,20 +30,9 @@ public class MoteurGraphique extends JFrame {
 
 
     public void run() {
-        //while (true) {
             this.frame = new Affichage(this.m, this);
             this.add(this.frame);
             this.setVisible(true);
-            m.setMap_updated(false);
-            //this.remove(this.frame);
-            while (m.getMap_updated() == false) {
-                try {
-                    TimeUnit.MILLISECONDS.sleep(10);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        //}
     }
 
 }
