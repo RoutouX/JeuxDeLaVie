@@ -5,12 +5,11 @@ public class RunGame extends Thread {
 
 
     public RunGame() {
-        this.m = new Map(192, 108);
+        this.m = new Map(38, 22);
     }
 
     public void run() {
         while (true) {
-            //this.m.print_map();
             this.m.map_update();
             m.setMap_updated(true);
             try {

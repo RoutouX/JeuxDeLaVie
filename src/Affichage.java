@@ -18,8 +18,8 @@ public class Affichage extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        double fenetre_size_x = mg.getSize().getWidth();
-        double fenetre_size_y = mg.getSize().getHeight();
+        double fenetre_size_x = mg.getContentPane().getWidth();
+        double fenetre_size_y = mg.getContentPane().getHeight();
         int size_x = m.getSize_x();
         int size_y = m.getSize_y();
 
