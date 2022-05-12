@@ -24,10 +24,7 @@ public class RunGame extends Thread {
             this.m.map_preupdate();
             moteurgraphique.repaint();
             tempsFin = System.currentTimeMillis();
-            while((speed - (tempsFin - tempsDebut)) > 0) {
-                try {TimeUnit.MILLISECONDS.sleep(10);} catch (InterruptedException e) {throw new RuntimeException(e);}
-                tempsFin = System.currentTimeMillis();
-            }
+            try {TimeUnit.MILLISECONDS.sleep(speed - (tempsFin - tempsDebut));} catch (InterruptedException e) {throw new RuntimeException(e);}
             }
         }
     }
