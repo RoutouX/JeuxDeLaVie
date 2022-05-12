@@ -7,14 +7,19 @@ public class Map {
 
     private boolean map_updated;
 
-    public Map(int size_x, int size_y)
+    public Map(int size_x, int size_y, boolean random)
     {
         this.map_updated = false;
         Random rd = new Random();
         tableau_celul = new Celule[size_x][size_y];
         for (int x=0; x<size_x;x++) {
             for (int y=0; y<size_y;y++) {
-                tableau_celul[x][y] = new Celule(rd.nextBoolean(), x, y);
+                if(random == true) {
+                    tableau_celul[x][y] = new Celule(rd.nextBoolean(), x, y);
+                }
+                else{
+                    tableau_celul[x][y] = new Celule(false, x, y);
+                }
             }
         }
         this.size_x = size_x;

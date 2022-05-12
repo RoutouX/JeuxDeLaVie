@@ -16,7 +16,6 @@ public class Affichage extends JPanel {
 
 
     public void paintComponent(Graphics g) {
-        long tempsDebutRG = System.currentTimeMillis();
         super.paintComponent(g);
 
         double fenetre_size_x = mg.getContentPane().getWidth();
@@ -39,9 +38,10 @@ public class Affichage extends JPanel {
         for(CareCelule c : tableauCareCelule) {
             c.paintcelule(g);
         }
-        long tempsFinRG = System.currentTimeMillis();
-        long temps = tempsFinRG - tempsDebutRG;
-        System.out.println("Temps paint = "+(temps));
+    }
+
+    public void changeAffichageMap(Map map){
+        this.m = map;
     }
 
 

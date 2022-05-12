@@ -21,7 +21,7 @@ public class Main
     public static void main(String[] args) throws InterruptedException {
         RunGame runGame = new RunGame();
         Map m = runGame.getMap();
-        MoteurGraphique moteurGraphique = new MoteurGraphique(m);
+        MoteurGraphique moteurGraphique = new MoteurGraphique(m, runGame);
         runGame.setMoteurGraphique(moteurGraphique);
 
         Thread threadGame = new Thread(runGame);
