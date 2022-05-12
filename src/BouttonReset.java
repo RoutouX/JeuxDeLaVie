@@ -17,6 +17,7 @@ public class BouttonReset extends JButton {
             public void actionPerformed(ActionEvent e) {
                 Map m = rungame.resetMap();
                 moteurGraphique.getAffichage().changeAffichageMap(m);
+                moteurGraphique.repaint();
             }
         });
     }

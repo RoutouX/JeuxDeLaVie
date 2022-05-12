@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Interface extends JPanel {
     private MoteurGraphique moteurGraphique;
@@ -11,6 +9,7 @@ public class Interface extends JPanel {
     private BouttonSpeedMoin boutonspeedmoin;
     private TextFieldSpeed texteSpeed;
     private BouttonReset bouttonReset;
+    private BouttonAddElement bouttonAddElement;
     private RunGame rungame;
 
     public Interface(RunGame rungameA, MoteurGraphique mg){
@@ -21,6 +20,7 @@ public class Interface extends JPanel {
         this.boutonspeedplus = new BouttonSpeedPlus(rungame, texteSpeed);
         this.boutonspeedmoin = new BouttonSpeedMoin(rungame, texteSpeed);
         this.bouttonReset = new BouttonReset(rungame, moteurGraphique);
+        this.bouttonAddElement = new BouttonAddElement(rungame, moteurGraphique);
 
         this.setBounds(0,0,100,this.moteurGraphique.getHeight());
         this.setBackground(new Color(0,0,0,75));
@@ -30,6 +30,8 @@ public class Interface extends JPanel {
         this.add(this.texteSpeed);
         this.add(this.boutonspeedmoin);
         this.add(this.bouttonReset);
+        this.add(this.bouttonAddElement);
     }
+
 
 }

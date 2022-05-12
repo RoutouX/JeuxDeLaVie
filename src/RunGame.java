@@ -21,9 +21,9 @@ public class RunGame extends Thread {
         while (this.pause == false) {
             tempsDebut = System.currentTimeMillis();
             this.m.map_update();
-            tempsFin = System.currentTimeMillis();
             this.m.map_preupdate();
             moteurgraphique.repaint();
+            tempsFin = System.currentTimeMillis();
             try {TimeUnit.MILLISECONDS.sleep(speed - (tempsFin - tempsDebut));} catch (InterruptedException e) {throw new RuntimeException(e);}
             }
         }
