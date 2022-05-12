@@ -36,6 +36,7 @@ public class MoteurGraphique extends JFrame {
     public void run() {
         this.frame = new Affichage(this.m, this);
         this.interfacejeux = new Interface(this.rungame, this);
+
         this.add(this.interfacejeux);
         this.add(this.frame);
         this.setVisible(true);
@@ -44,4 +45,5 @@ public class MoteurGraphique extends JFrame {
     public Affichage getAffichage(){
         return frame;
     }
+    public Interface getInterfacejeux(){return interfacejeux;}
 }

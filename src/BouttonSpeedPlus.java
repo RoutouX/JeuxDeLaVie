@@ -11,7 +11,7 @@ public class BouttonSpeedPlus extends JButton {
         this.rungame = RunG;
         this.textFieldSpeed = txtfs;
         this.setPreferredSize(new Dimension(90, 90));
-        this.setText("+");
+        this.setText("<html><h1 style='font-size:45'>+</h1</html>");
         this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

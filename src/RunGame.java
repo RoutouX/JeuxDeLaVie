@@ -21,10 +21,13 @@ public class RunGame extends Thread {
         while (this.pause == false) {
             tempsDebut = System.currentTimeMillis();
             this.m.map_update();
-            tempsFin = System.currentTimeMillis();
             this.m.map_preupdate();
             moteurgraphique.repaint();
-            try {TimeUnit.MILLISECONDS.sleep(speed - (tempsFin - tempsDebut));} catch (InterruptedException e) {throw new RuntimeException(e);}
+            tempsFin = System.currentTimeMillis();
+            while((speed - (tempsFin - tempsDebut)) > 0) {
+                try {TimeUnit.MILLISECONDS.sleep(10);} catch (InterruptedException e) {throw new RuntimeException(e);}
+                tempsFin = System.currentTimeMillis();
+            }
             }
         }
     }
