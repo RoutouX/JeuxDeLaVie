@@ -36,6 +36,19 @@ public class Map {
     }
 
     public Celule get_celule_by_co(int x,int  y) {
+        while (x >= size_x){
+            x = x - size_x;
+        }
+        while (x < 0){
+            x = x + size_x;
+        }
+
+        while (y >= size_y){
+            y = y - size_y;
+        }
+        while (y < 0){
+            y = y + size_y;
+        }
         return this.tableau_celul[x][y];
     }
 

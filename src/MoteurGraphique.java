@@ -20,14 +20,15 @@ import java.util.concurrent.TimeUnit;
 public class MoteurGraphique extends JFrame {
 
     private Map m;
-
     private RunGame rungame;
+    private Contenaire contenaire;
     private Affichage frame;
     private Interface interfacejeux ;
 
     public MoteurGraphique(Map m, RunGame rungameA) {
         this.m = m;
         this.rungame = rungameA;
+        this.contenaire = new Contenaire(this);
         this.setSize(1920, 1080);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
@@ -39,6 +40,9 @@ public class MoteurGraphique extends JFrame {
 
         this.add(this.interfacejeux);
         this.add(this.frame);
+
+        //this.add(contenaire);
+
         this.setVisible(true);
     }
 

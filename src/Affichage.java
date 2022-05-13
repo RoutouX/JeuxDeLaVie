@@ -11,9 +11,7 @@ public class Affichage extends JPanel {
     public Affichage(Map m, MoteurGraphique mg){
         this.m = m;
         this.mg = mg;
-
     }
-
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

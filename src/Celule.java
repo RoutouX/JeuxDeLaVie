@@ -30,48 +30,14 @@ public class Celule extends position2D {
         Celule celule_bas_droit;
 
 
-        if(m.celul_exist(this.get_x()-1, this.get_y()-1)) {
-            celule_haut_gauche = m.get_celule_by_co(this.get_x() - 1, this.get_y() - 1);
-        }else {
-            celule_haut_gauche = new Celule(false, this.get_x()-1, this.get_y()-1);
-        }
-        if(m.celul_exist(this.get_x(), this.get_y()-1)) {
-            celule_haut_milieu = m.get_celule_by_co(this.get_x(), this.get_y() - 1);
-        }else {
-            celule_haut_milieu = new Celule(false, this.get_x(), this.get_y()-1);
-        }
-        if(m.celul_exist(this.get_x()+1, this.get_y()-1)) {
-            celule_haut_droit = m.get_celule_by_co(this.get_x() + 1, this.get_y() - 1);
-        }else {
-            celule_haut_droit = new Celule(false, this.get_x()+1, this.get_y()-1);
-        }
-
-        if(m.celul_exist(this.get_x()-1, this.get_y())) {
-            celule_milieu_gauche = m.get_celule_by_co(this.get_x() - 1, this.get_y());
-        }else {
-            celule_milieu_gauche = new Celule(false, this.get_x()-1, this.get_y());
-        }
-        if(m.celul_exist(this.get_x()+1, this.get_y())) {
-            celule_milieu_droite = m.get_celule_by_co(this.get_x() + 1, this.get_y());
-        }else {
-            celule_milieu_droite = new Celule(false, this.get_x()+1, this.get_y());
-        }
-
-        if(m.celul_exist(this.get_x()-1, this.get_y()+1)) {
-            celule_bas_gauche = m.get_celule_by_co(this.get_x() - 1, this.get_y() +1);
-        }else {
-            celule_bas_gauche = new Celule(false, this.get_x()-1, this.get_y()+1);
-        }
-        if(m.celul_exist(this.get_x(), this.get_y()+1)) {
-            celule_bas_milieu = m.get_celule_by_co(this.get_x(), this.get_y() + 1);
-        }else {
-            celule_bas_milieu = new Celule(false, this.get_x(), this.get_y()+1);
-        }
-        if(m.celul_exist(this.get_x()+1, this.get_y()+1)) {
-            celule_bas_droit = m.get_celule_by_co(this.get_x() + 1, this.get_y() + 1);
-        }else {
-            celule_bas_droit = new Celule(false, this.get_x()+1, this.get_y()+1);
-        }
+        celule_haut_gauche = m.get_celule_by_co(this.get_x() - 1, this.get_y() - 1);
+        celule_haut_milieu = m.get_celule_by_co(this.get_x(), this.get_y() - 1);
+        celule_haut_droit = m.get_celule_by_co(this.get_x() + 1, this.get_y() - 1);
+        celule_milieu_gauche = m.get_celule_by_co(this.get_x() - 1, this.get_y());
+        celule_milieu_droite = m.get_celule_by_co(this.get_x() + 1, this.get_y());
+        celule_bas_gauche = m.get_celule_by_co(this.get_x() - 1, this.get_y() +1);
+        celule_bas_milieu = m.get_celule_by_co(this.get_x(), this.get_y() + 1);
+        celule_bas_droit = m.get_celule_by_co(this.get_x() + 1, this.get_y() + 1);
 
         int cpt_celule = 0;
         if (celule_haut_gauche.get_etat()){cpt_celule++;}
