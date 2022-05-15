@@ -1,25 +1,44 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class InterfaceSelectCelule extends JLabel {
+public class InterfaceSelectCelule extends JPanel {
+    boolean isVisible = false;
+    MoteurGraphique moteurGraphique;
+    BouttonAddCelule bouttonAddCelule;
+    BouttonAddCaree bouttonAddCaree;
+    BouttonAddVaisseaux bouttonAddVaisseaux;
+    BouttonAddCanon bouttonAddCanon;
 
-    private MoteurGraphique moteurGraphique;
-    private BouttonAddCelule bouttonAddCelule;
-    private BouttonAddCanon bouttonAddCanon;
-
-    public InterfaceSelectCelule (MoteurGraphique mg){
+    public InterfaceSelectCelule(MoteurGraphique mg){
         this.moteurGraphique = mg;
-        bouttonAddCelule = new BouttonAddCelule();
-        bouttonAddCanon = new BouttonAddCanon();
+        this.bouttonAddCelule = new BouttonAddCelule(mg);
+        this.bouttonAddCaree = new BouttonAddCaree(mg);
+        this.bouttonAddVaisseaux = new BouttonAddVaisseaux(mg);
+        this.bouttonAddCanon = new BouttonAddCanon(mg);
 
-        //this.moteurGraphique.getWidth()-100
-        //this.moteurGraphique.getHeight()
-        this.setBounds(100,100,100,100);
-        this.setBackground(new Color(0,255,0,255));
 
-        this.add(this.bouttonAddCelule);
-        this.add(this.bouttonAddCanon);
+        this.setBounds(moteurGraphique.getWidth()-100,0,100, moteurGraphique.getHeight());
+        this.setBackground(new Color(0,0,0,75));
+
+        this.add(bouttonAddCelule);
+        this.add(bouttonAddCaree);
+        this.add(bouttonAddVaisseaux);
+        this.add(bouttonAddCanon);
+
+        this.setVisible(isVisible);
 
     }
+
+    public void switchVisible(){
+        if (isVisible == true){
+            isVisible = false;
+        }else{
+            isVisible = true;
+        }
+        this.setVisible(isVisible);
+    }
+
+
+
 
 }

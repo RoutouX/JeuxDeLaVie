@@ -21,27 +21,32 @@ public class MoteurGraphique extends JFrame {
 
     private Map m;
     private RunGame rungame;
-    private Contenaire contenaire;
     private Affichage frame;
     private Interface interfacejeux ;
+    private InterfaceSelectCelule interfaceSelectCelule;
+
+    private PaterneCelule paterneCelule;
 
     public MoteurGraphique(Map m, RunGame rungameA) {
         this.m = m;
         this.rungame = rungameA;
-        this.contenaire = new Contenaire(this);
         this.setSize(1920, 1080);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
     }
 
 
     public void run() {
         this.frame = new Affichage(this.m, this);
         this.interfacejeux = new Interface(this.rungame, this);
+        this.interfaceSelectCelule = new InterfaceSelectCelule(this);
+
 
         this.add(this.interfacejeux);
+        this.add(this.interfaceSelectCelule);
         this.add(this.frame);
 
-        //this.add(contenaire);
 
         this.setVisible(true);
     }
@@ -50,4 +55,7 @@ public class MoteurGraphique extends JFrame {
         return frame;
     }
     public Interface getInterfacejeux(){return interfacejeux;}
+    public InterfaceSelectCelule getInterfaceSelectCelule(){return  interfaceSelectCelule;}
+
+    public Map getMap(){return m;}
 }

@@ -19,6 +19,9 @@ public class TextFieldSpeed extends JTextField {
         DecimalFormat df;
         double speed = ((rungame.getSpeed() * 1.0)/1000);
         if (speed < 0.9){
+            if(speed < 0.005){
+                rungame.setSpeed(5);
+            }
             df = new DecimalFormat("#.###");
         }
         else if ((speed >= 0.9)&&(speed <= 1.1)){

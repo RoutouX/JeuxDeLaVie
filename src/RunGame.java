@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
 public class RunGame extends Thread {
@@ -20,8 +21,9 @@ public class RunGame extends Thread {
         {
             while (this.pause == false) {
                 tempsDebut = System.currentTimeMillis();
-                this.m.map_update();
                 this.m.map_preupdate();
+                this.m.map_update();
+                moteurgraphique.revalidate();
                 moteurgraphique.repaint();
                 tempsFin = System.currentTimeMillis();
                 while ((tempsFin - tempsDebut)< speed) {

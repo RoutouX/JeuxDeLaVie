@@ -20,7 +20,7 @@ public class Interface extends JPanel {
         this.boutonspeedplus = new BouttonSpeedPlus(rungame, texteSpeed);
         this.boutonspeedmoin = new BouttonSpeedMoin(rungame, texteSpeed);
         this.bouttonReset = new BouttonReset(rungame, moteurGraphique);
-        this.bouttonAddElement = new BouttonAddElement(rungame, moteurGraphique);
+        this.bouttonAddElement = new BouttonAddElement(moteurGraphique);
 
         this.setBounds(0,0,100,this.moteurGraphique.getHeight());
         this.setBackground(new Color(0,0,0,75));

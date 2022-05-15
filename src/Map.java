@@ -104,4 +104,14 @@ public class Map {
     public void setMap_updated(boolean b){
         this.map_updated = b;
     }
+
+    public void FusionOR(Map m){
+        for (int x=0; x<this.size_x;x++) {
+            for (int y=0; y<this.size_y;y++) {
+                if(m.get_celule_by_co(x, y).get_etat()==true){
+                    this.tableau_celul[x][y].set_etat(true);
+                }
+            }
+        }
+    }
 }
