@@ -16,8 +16,12 @@ public class BouttonAddVaisseaux extends JButton {
         this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                moteurGraphique.getAffichage().settypePaterne(3);
-                moteurGraphique.getAffichage().switchAffMapOver();
+                if(moteurGraphique.getAffichage().gettypePaterne()==3){
+                    moteurGraphique.getAffichage().switchAffMapOver();
+                }else{
+                    moteurGraphique.getAffichage().settypePaterne(3);
+                    moteurGraphique.getAffichage().setAffMapOver(true);
+                }
                 moteurGraphique.revalidate();
                 moteurGraphique.repaint();
             }

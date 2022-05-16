@@ -28,5 +28,4 @@ public class BouttonPause extends JButton {
             this.setText("Pause");
         }
     }
-
 }

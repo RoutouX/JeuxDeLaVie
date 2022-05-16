@@ -27,9 +27,6 @@ public class RunGame extends Thread {
                 moteurgraphique.repaint();
                 tempsFin = System.currentTimeMillis();
                 while ((tempsFin - tempsDebut)< speed) {
-                    //System.out.print("Temps Debut = " + tempsDebut);
-                    //System.out.print("\tTemps Fin = " + tempsFin);
-                    //System.out.print("\tSpeed = " + speed + "\n");
                     try {TimeUnit.MILLISECONDS.sleep(10);} catch (InterruptedException e) {throw new RuntimeException(e);}
                     tempsFin = System.currentTimeMillis();
                 }

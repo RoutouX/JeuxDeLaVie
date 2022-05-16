@@ -15,8 +15,12 @@ public class BouttonAddCelule extends JButton {
         this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                moteurGraphique.getAffichage().settypePaterne(1);
-                moteurGraphique.getAffichage().switchAffMapOver();
+                if(moteurGraphique.getAffichage().gettypePaterne()==1){
+                    moteurGraphique.getAffichage().switchAffMapOver();
+                }else{
+                    moteurGraphique.getAffichage().settypePaterne(1);
+                    moteurGraphique.getAffichage().setAffMapOver(true);
+                }
                 moteurGraphique.revalidate();
                 moteurGraphique.repaint();
             }

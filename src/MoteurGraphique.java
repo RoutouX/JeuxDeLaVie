@@ -6,12 +6,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
 import java.io.Console;
-import java.awt.event.MouseMotionAdapter;
 
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -24,8 +20,7 @@ public class MoteurGraphique extends JFrame {
     private Affichage frame;
     private Interface interfacejeux ;
     private InterfaceSelectCelule interfaceSelectCelule;
-
-    private PaterneCelule paterneCelule;
+    private InterfaceNewMap interfaceNewMap;
 
     public MoteurGraphique(Map m, RunGame rungameA) {
         this.m = m;
@@ -33,18 +28,24 @@ public class MoteurGraphique extends JFrame {
         this.setSize(1920, 1080);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
+        this.addComponentListener(new ComponentAdapter() {
+            public void componentResized(ComponentEvent e) {
+                interfaceSelectCelule.MiseAJour();
+                interfaceNewMap.MiseAJour();
+            }
+        });
     }
-
 
     public void run() {
         this.frame = new Affichage(this.m, this);
         this.interfacejeux = new Interface(this.rungame, this);
         this.interfaceSelectCelule = new InterfaceSelectCelule(this);
+        this.interfaceNewMap = new InterfaceNewMap(this);
 
 
         this.add(this.interfacejeux);
         this.add(this.interfaceSelectCelule);
+        this.add(this.interfaceNewMap);
         this.add(this.frame);
 
 
@@ -56,6 +57,7 @@ public class MoteurGraphique extends JFrame {
     }
     public Interface getInterfacejeux(){return interfacejeux;}
     public InterfaceSelectCelule getInterfaceSelectCelule(){return  interfaceSelectCelule;}
+    public InterfaceNewMap getInterfaceNewMap(){return this.interfaceNewMap;}
 
     public Map getMap(){return m;}
 }

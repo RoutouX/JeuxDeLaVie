@@ -9,9 +9,9 @@ public class PaterneCaree {
         int positionCeluleY = Math.round(((float)sourisY/(float)fenetre_size_y)*(float)m.getSize_y());
 
         m.get_celule_by_co(positionCeluleX, positionCeluleY).set_etat(true);
-        m.get_celule_by_co(positionCeluleX+1, positionCeluleY).set_etat(true);
-        m.get_celule_by_co(positionCeluleX, positionCeluleY+1).set_etat(true);
-        m.get_celule_by_co(positionCeluleX+1, positionCeluleY+1).set_etat(true);
+        m.get_celule_by_co(positionCeluleX-1, positionCeluleY).set_etat(true);
+        m.get_celule_by_co(positionCeluleX, positionCeluleY-1).set_etat(true);
+        m.get_celule_by_co(positionCeluleX-1, positionCeluleY-1).set_etat(true);
     }
 
 }

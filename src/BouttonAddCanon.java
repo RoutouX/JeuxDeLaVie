@@ -15,8 +15,12 @@ public class BouttonAddCanon extends JButton {
         this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                moteurGraphique.getAffichage().settypePaterne(4);
-                moteurGraphique.getAffichage().switchAffMapOver();
+                if(moteurGraphique.getAffichage().gettypePaterne()==4){
+                    moteurGraphique.getAffichage().switchAffMapOver();
+                }else{
+                    moteurGraphique.getAffichage().settypePaterne(4);
+                    moteurGraphique.getAffichage().setAffMapOver(true);
+                }
                 moteurGraphique.revalidate();
                 moteurGraphique.repaint();
             }

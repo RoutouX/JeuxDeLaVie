@@ -10,6 +10,7 @@ public class Interface extends JPanel {
     private TextFieldSpeed texteSpeed;
     private BouttonReset bouttonReset;
     private BouttonAddElement bouttonAddElement;
+    private BouttonNewMap bouttonNewMap;
     private RunGame rungame;
 
     public Interface(RunGame rungameA, MoteurGraphique mg){
@@ -21,6 +22,7 @@ public class Interface extends JPanel {
         this.boutonspeedmoin = new BouttonSpeedMoin(rungame, texteSpeed);
         this.bouttonReset = new BouttonReset(rungame, moteurGraphique);
         this.bouttonAddElement = new BouttonAddElement(moteurGraphique);
+        this.bouttonNewMap = new BouttonNewMap(moteurGraphique);
 
         this.setBounds(0,0,100,this.moteurGraphique.getHeight());
         this.setBackground(new Color(0,0,0,75));
@@ -31,6 +33,7 @@ public class Interface extends JPanel {
         this.add(this.boutonspeedmoin);
         this.add(this.bouttonReset);
         this.add(this.bouttonAddElement);
+        this.add(this.bouttonNewMap);
     }
 
 
