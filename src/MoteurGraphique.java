@@ -60,4 +60,23 @@ public class MoteurGraphique extends JFrame {
     public InterfaceNewMap getInterfaceNewMap(){return this.interfaceNewMap;}
 
     public Map getMap(){return m;}
+    public void setMap(Map map){
+        this.m = map;
+        rungame.changeMap(map);
+
+        this.remove(this.interfacejeux);
+        this.remove(this.interfaceSelectCelule);
+        this.remove(this.interfaceNewMap);
+        this.remove(this.frame);
+
+        this.frame = new Affichage(this.m, this);
+        this.interfacejeux = new Interface(this.rungame, this);
+        this.interfaceSelectCelule = new InterfaceSelectCelule(this);
+        this.interfaceNewMap = new InterfaceNewMap(this);
+
+        this.add(this.interfacejeux);
+        this.add(this.interfaceSelectCelule);
+        this.add(this.interfaceNewMap);
+        this.add(this.frame);
+    }
 }

@@ -63,4 +63,8 @@ public class RunGame extends Thread {
         return m;
     }
 
+    public void changeMap(Map map){
+        this.m = map;
+    }
+
 }
